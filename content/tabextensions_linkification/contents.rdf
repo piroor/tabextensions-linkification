@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		xmlns:chrome="http://www.mozilla.org/rdf/chrome#">
+
+	<!-- list all the packages being supplied by this jar -->
+	<RDF:Seq about="urn:mozilla:package:root">
+		<RDF:li resource="urn:mozilla:package:tabextensions_linkification"/>
+	</RDF:Seq>
+
+	<!-- package information -->
+	<RDF:Description about="urn:mozilla:package:tabextensions_linkification"
+		chrome:name="tabextensions_linkification"
+		chrome:displayName="Tabbrowser Extensions:Linkification Patch"
+		chrome:author="SHIMODA Hiroshi"
+		chrome:authorURL="http://piro.sakura.ne.jp/"
+		chrome:extension="true"
+		chrome:description="This resolves conflict of TBE with &quot;Linkification&quot; extension."/>
+
+
+	<!-- overlay information -->
+	<RDF:Seq about="urn:mozilla:overlays">
+		<RDF:li resource="chrome://tabextensions/content/browserOverlay.xul"/>
+	</RDF:Seq>
+
+
+	<RDF:Seq about="chrome://tabextensions/content/browserOverlay.xul">
+		<RDF:li>chrome://tabextensions_linkification/content/browserOverlay.xul</RDF:li>
+	</RDF:Seq>
+
+</RDF:RDF>
